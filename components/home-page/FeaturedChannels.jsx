@@ -37,7 +37,7 @@ const FeaturedChannels = () => {
         <div className='flex justify-between gap-10'>
             {channels.map((channel) => {
                 return(
-                    <ChannelCard props={channel}/>
+                    <ChannelCard key={channel.imageURL} props={channel}/>
                 )
             })}
         </div>

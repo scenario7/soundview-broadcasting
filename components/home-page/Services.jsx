@@ -37,7 +37,7 @@ const Services = () => {
         <div className="flex justify-between items-center gap-14">
             {services.map((service) => {
                 return(
-                    <ServiceCard props={service}/>
+                    <ServiceCard key={service.imageURL} props={service}/>
                 )
             })}
         </div>

@@ -19,7 +19,7 @@ const StudioGlimpse = () => {
         <div className="flex justify-between items-center">
             {images.map((image) => {
                 return(
-                    <img src={image} alt="" className='h-60 w-60 object-cover'/>
+                    <img key={image} src={image} alt="" className='h-60 w-60 object-cover'/>
                 )
             })}
             <a href="">
