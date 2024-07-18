@@ -16,7 +16,7 @@ const RegionCard = ({ props }) => {
       <a href={props.link}>
       <button className='absolute top-0 right-0 bg-white p-3 text-black rounded-bl-lg'>
         <svg 
-          dataSlot="icon" 
+           
           fill="none" 
           strokeWidth={2.5} 
           stroke="currentColor" 

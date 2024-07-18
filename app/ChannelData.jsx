@@ -1,11 +1,9 @@
-import RegionCard from '@/components/channels/RegionCard';
-import HeroTemplate from '@/components/HeroTemplate'
-import React from 'react'
-
-const channels = [
+export const channels = [
     {
         channelID : "indian",
         title : "Indian",
+        link : "/channels/indian",
+        imageURL : "http://www.svbllc.com/Resources/Studio%201A.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {
@@ -28,6 +26,8 @@ const channels = [
     {
         channelID : "pakistani",
         title : "Pakistani",
+        link : "/channels/pakistani",
+        imageURL : "http://www.svbllc.com/Resources/Studio%201B.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {
@@ -40,6 +40,8 @@ const channels = [
     {
         channelID : "bangladeshi",
         title : "Bangladeshi",
+        link : "/channels/bangladeshi",
+        imageURL : "http://www.svbllc.com/Resources/Studio%202A.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {
@@ -62,6 +64,8 @@ const channels = [
     {
         channelID : "african",
         title : "African",
+        link : "/channels/african",
+        imageURL : "http://www.svbllc.com/Resources/Studio%202B.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {
@@ -84,6 +88,8 @@ const channels = [
     {
         channelID : "greek",
         title : "Greek",
+        link : "/channels/greek",
+        imageURL : "http://www.svbllc.com/Resources/Studio%203A.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {
@@ -96,6 +102,8 @@ const channels = [
     {
         channelID : "russian",
         title : "Russian",
+        link : "/channels/russian",
+        imageURL : "http://www.svbllc.com/Resources/Studio%202A.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {
@@ -106,28 +114,3 @@ const channels = [
         ]
     },
 ]
-
-
-const page = ({ params }) => {
-
-    const channel = channels.find(channel => channel.channelID === params.channelID);
-
-  return (
-    <div className=''>
-        <HeroTemplate title={channel.title} image="https://firebasestorage.googleapis.com/v0/b/vistara-website.appspot.com/o/svbllc%2FStudio%202A.jpg?alt=media&token=d87ec15f-ee84-44f7-8b17-5d01b4361836" description={channel.description}/>
-        <div className='grid grid-cols-4 py-10 px-28 gap-20'>
-            {channel.offerings.map((offering) => {
-                return(
-                    <div className='flex flex-col items-center gap-3' key={offering.imageURL}>
-                        <img src={offering.imageURL} alt="" className='h-24 object-contain'/>
-                        <h3 className='text-lg font-semibold'>{offering.name}</h3>
-                        <p className='text-[#d9d9d9] text-sm text-center'>{offering.description}</p>
-                    </div>
-                )
-            })}
-        </div>
-    </div>
-  )
-}
-
-export default page
