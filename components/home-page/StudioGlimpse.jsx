@@ -1,5 +1,6 @@
 import React from 'react'
 import { PT_Serif } from 'next/font/google'
+import Image from 'next/image';
 
 const ptSerif = PT_Serif({
     weight: ['400', '700'],
@@ -7,9 +8,9 @@ const ptSerif = PT_Serif({
   });
 
   const images = [
-    "http://www.svbllc.com/Resources/Studio%201A.jpg",
+    "https://i.imgur.com/5JrzfUf.jpg",
     "https://i.imgur.com/7pel8b5.jpg",
-    "http://www.svbllc.com/Resources/Studio%201AA.jpg"
+    "https://i.imgur.com/3Csxnyk.jpg"
   ]
 
 const StudioGlimpse = () => {
@@ -19,7 +20,7 @@ const StudioGlimpse = () => {
         <div className="flex justify-between items-center">
             {images.map((image) => {
                 return(
-                    <img key={image} src={image} alt="" className='h-60 w-60 object-cover'/>
+                    <img key={image} src={image} className='h-60 w-60 object-cover'/>
                 )
             })}
             <a href="">
