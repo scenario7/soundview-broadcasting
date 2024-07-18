@@ -8,7 +8,7 @@ const ptSerif = PT_Serif({
 
   const images = [
     "http://www.svbllc.com/Resources/Studio%201A.jpg",
-    "http://www.svbllc.com/Resources/Studio%201B.jpg",
+    "https://i.imgur.com/7pel8b5.jpg",
     "http://www.svbllc.com/Resources/Studio%201AA.jpg"
   ]
 

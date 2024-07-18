@@ -13,37 +13,37 @@ const ptSerif = PT_Serif({
 const studios = [
     {
         studioID : "1a",
-        imageURL : "https://firebasestorage.googleapis.com/v0/b/vistara-website.appspot.com/o/svbllc%2FStudio%201A.jpg?alt=media&token=cf6ec8cc-8447-4fcc-bc6f-31624b6fe8af",
+        imageURL : "https://i.imgur.com/7X87xYN.jpg",
         title : "Studio 1A",
         link : "studios/1a"
     },
     {
         studioID : "1b",
-        imageURL : "http://www.svbllc.com/Resources/Studio%201B.jpg",
+        imageURL : "https://i.imgur.com/7pel8b5.jpg",
         title : "Studio 1B",
         link : "studios/1b"
     },
     {
         studioID : "2a",
-        imageURL : "http://www.svbllc.com/Resources/Studio%201AA.jpg",
+        imageURL : "https://i.imgur.com/acxrZn2.jpg",
         title : "Studio 2A",
         link : "studios/2a"
     },
     {
         studioID : "2b",
-        imageURL : "http://www.svbllc.com/Resources/Studio%202B.jpg",
+        imageURL : "https://i.imgur.com/Btt4Xks.jpg",
         title : "Studio 2B",
         link : "studios/2b"
     },
     {
         studioID : "3a",
-        imageURL : "http://www.svbllc.com/Resources/Studio%203A.jpg",
+        imageURL : "https://i.imgur.com/6QIDjNn.jpg",
         title : "Studio 3A",
         link : "studios/3a"
     },
     {
         studioID : "3b",
-        imageURL : "http://www.svbllc.com/Resources/Studio%203C.jpg",
+        imageURL : "https://i.imgur.com/by02EQ3.jpg",
         title : "Studio 3B",
         link : "studios/3b"
     },

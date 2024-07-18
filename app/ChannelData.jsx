@@ -27,7 +27,7 @@ export const channels = [
         channelID : "pakistani",
         title : "Pakistani",
         link : "/channels/pakistani",
-        imageURL : "http://www.svbllc.com/Resources/Studio%201B.jpg",
+        imageURL : "https://i.imgur.com/7pel8b5.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {
@@ -41,7 +41,7 @@ export const channels = [
         channelID : "bangladeshi",
         title : "Bangladeshi",
         link : "/channels/bangladeshi",
-        imageURL : "http://www.svbllc.com/Resources/Studio%202A.jpg",
+        imageURL : "https://i.imgur.com/acxrZn2.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {
@@ -65,7 +65,7 @@ export const channels = [
         channelID : "african",
         title : "African",
         link : "/channels/african",
-        imageURL : "http://www.svbllc.com/Resources/Studio%202B.jpg",
+        imageURL : "https://i.imgur.com/Btt4Xks.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {
@@ -89,7 +89,7 @@ export const channels = [
         channelID : "greek",
         title : "Greek",
         link : "/channels/greek",
-        imageURL : "http://www.svbllc.com/Resources/Studio%203A.jpg",
+        imageURL : "https://i.imgur.com/6QIDjNn.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {
@@ -103,7 +103,7 @@ export const channels = [
         channelID : "russian",
         title : "Russian",
         link : "/channels/russian",
-        imageURL : "http://www.svbllc.com/Resources/Studio%202A.jpg",
+        imageURL : "https://i.imgur.com/acxrZn2.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {

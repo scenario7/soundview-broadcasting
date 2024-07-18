@@ -12,48 +12,48 @@ const ptSerif = PT_Serif({
 const studios = [
     {
         studioID : "1a",
-        image1URL : "http://www.svbllc.com/Resources/Studio%201A.jpg",
-        image2URL : "http://www.svbllc.com/Resources/Studio%201A.jpg",
+        image1URL : "https://i.imgur.com/5JrzfUf.jpg",
+        image2URL : "https://i.imgur.com/7X87xYN.jpg",
         services : ["Sound Production", "Video Production", "Live Broadcasting"],
         title : "Studio 1A",
 
     },
     {
         studioID : "1b",
-        image1URL : "http://www.svbllc.com/Resources/Studio%201B.jpg",
-        image2URL : "http://www.svbllc.com/Resources/Studio%201A.jpg",
+        image1URL : "https://i.imgur.com/7pel8b5.jpg",
+        image2URL : "https://i.imgur.com/TxjLBHC.jpg",
         services : ["Sound Production", "Video Production", "Live Broadcasting"],
         title : "Studio 1B",
 
     },
     {
         studioID : "2a",
-        image1URL : "http://www.svbllc.com/Resources/Studio%201AA.jpg",
-        image2URL : "http://www.svbllc.com/Resources/Studio%201A.jpg",
+        image1URL : "https://i.imgur.com/acxrZn2.jpg",
+        image2URL : "",
         services : ["Sound Production", "Video Production", "Live Broadcasting"],
         title : "Studio 2A",
 
     },
     {
         studioID : "2b",
-        image1URL : "http://www.svbllc.com/Resources/Studio%202B.jpg",
-        image2URL : "http://www.svbllc.com/Resources/Studio%201A.jpg",
+        image1URL : "https://i.imgur.com/Btt4Xks.jpg",
+        image2URL : "",
         services : ["Sound Production", "Video Production", "Live Broadcasting"],
         title : "Studio 2B",
 
     },
     {
         studioID : "3a",
-        image1URL : "http://www.svbllc.com/Resources/Studio%203A.jpg",
-        image2URL : "http://www.svbllc.com/Resources/Studio%201A.jpg",
+        image1URL : "https://i.imgur.com/6QIDjNn.jpg",
+        image2URL : "",
         services : ["Sound Production", "Video Production", "Live Broadcasting"],
         title : "Studio 3A",
 
     },
     {
         studioID : "3b",
-        image1URL : "http://www.svbllc.com/Resources/Studio%203C.jpg",
-        image2URL : "http://www.svbllc.com/Resources/Studio%201A.jpg",
+        image1URL : "https://i.imgur.com/by02EQ3.jpg",
+        image2URL : "https://i.imgur.com/3Csxnyk.jpg",
         services : ["Sound Production", "Video Production", "Live Broadcasting"],
         title : "Studio 3B",
 
@@ -123,7 +123,9 @@ const Page = ({ params }) => {
                             </svg>
                         </button>
                     </div>
-                        <img src={studio.image2URL} alt=""  className='rounded-tr-[100px] rounded-bl-[100px] w-3/4'/>
+                    {studio.image2URL && (
+                        <img src={studio.image2URL} alt="" className='rounded-tr-[100px] rounded-bl-[100px] w-3/4'/>
+                    )}
                     </div>
                 </div>
                 <CustomFooter/>
