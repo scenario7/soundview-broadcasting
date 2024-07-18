@@ -112,13 +112,13 @@ const ChannelsPage = () => {
       <Marquee className='flex justify-between py-20'>
         {logos.map((image) => {
             return(
-                <img src={image} className='h-12 px-10 filter brightness-125'></img>
+                <img key={image} src={image} className='h-12 px-10 filter brightness-125'></img>
             )
         })}
       </Marquee>
       <div className='grid grid-cols-4 py-10 gap-10 px-20 pt-5 w-full items-center md:items-start lg:items-start justify-center'>
         {regions.map((region, index) => (
-            <RegionCard key={index} props={region} />
+            <RegionCard key={index} props={region}/>
         ))}
         <div className='text-center items-center flex flex-col gap-10 py-20 col-span-3'>
         <h3 className={`${ptSerif.className} text-6xl text-[#d9d9d9]`}>Learn More</h3>

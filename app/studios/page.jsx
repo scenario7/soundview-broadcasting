@@ -56,7 +56,7 @@ const page = () => {
         <div className='grid grid-cols-4 gap-10 px-28 py-10 items-stretch'>
             {studios.map((studio) => {
                 return(
-                    <ServiceCard props={studio}/>
+                    <ServiceCard props={studio} key={studio.imageURL}/>
                 )
             })}
             <div className='items-center justify-center h-full col-span-2 flex flex-col gap-10'>

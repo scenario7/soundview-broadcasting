@@ -118,7 +118,7 @@ const page = ({ params }) => {
         <div className='grid grid-cols-4 py-10 px-28 gap-20'>
             {channel.offerings.map((offering) => {
                 return(
-                    <div className='flex flex-col items-center gap-3'>
+                    <div className='flex flex-col items-center gap-3' key={offering.imageURL}>
                         <img src={offering.imageURL} alt="" className='h-24 object-contain'/>
                         <h3 className='text-lg font-semibold'>{offering.name}</h3>
                         <p className='text-[#d9d9d9] text-sm text-center'>{offering.description}</p>
