@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ServiceCard = ({ props }) => {
+const RegionCard = ({ props }) => {
   return (
     <div 
-      className='relative h-80 w-full' 
+      className='relative h-80 w-64' 
       style={{ 
         backgroundImage: `linear-gradient(to bottom, #101010, transparent), url(${props.imageURL})`, 
         backgroundSize: 'cover', 
@@ -34,4 +34,4 @@ const ServiceCard = ({ props }) => {
   )
 }
 
-export default ServiceCard
+export default RegionCard

@@ -28,12 +28,12 @@ const CustomFooter = () => {
             <div className="flex flex-col">
                 <h3 className={`${ptSerif.className} text-white text-lg`}>Links</h3>
                 <div className='text-sm text-[#BBBBBB] flex flex-col py-2'>
-                <a href="">Home</a>
-                <a href="">Channels</a>
-                <a href="">Services</a>
-                <a href="">Advertise</a>
-                <a href="">Careers</a>
-                <a href="">Contact</a>
+                <a href="/">Home</a>
+                <a href="/channels">Channels</a>
+                <a href="/studios">Studios</a>
+                <a href="/advertisements">Advertise</a>
+                <a href="/careers">Careers</a>
+                <a href="/contact">Contact</a>
                 </div>
             </div>
             <div className="flex flex-col">
