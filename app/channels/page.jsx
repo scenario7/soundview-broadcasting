@@ -32,7 +32,7 @@ const ChannelsPage = () => {
           ) : null
         )}
       </Marquee>
-      <div className='grid md:grid-cols-4 grid-cols-1 lg:grid-cols-4 py-10 gap-10 px-5 md:px-10 lg:px-20 pt-5 w-full items-center md:items-start lg:items-start justify-center'>
+      <div className='grid grid-cols-1 md:grid-cols-4 gap-10 px-10 md:px-28 py-10 items-stretch'>
         {channels && channels.map((region, index) => (
             <RegionCard key={index} props={region}/>
         ))}

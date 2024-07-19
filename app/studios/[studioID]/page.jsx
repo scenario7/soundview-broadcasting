@@ -80,7 +80,7 @@ const Page = ({ params }) => {
                         <img src={studio.image1URL} alt=""  className='md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-3/4'/>
                         <div className='flex flex-col items-center text-center gap-5'>
                             <h3 className='text-white'>Studio <span className='uppercase'>{studio.studioID}</span> is equipped for</h3>
-                            <div className='flex md:flex-col'>
+                            <div className='flex md:flex-col gap-3'>
                             {studio.services.map((service) => {
                                 
                                 switch(service){

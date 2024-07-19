@@ -3,7 +3,7 @@ import React from 'react'
 const RegionCard = ({ props }) => {
   return (
     <div 
-      className='relative h-80 w-64' 
+      className='relative h-80' 
       style={{ 
         backgroundImage: `linear-gradient(to bottom, #101010, transparent), url(${props.imageURL})`, 
         backgroundSize: 'cover', 
