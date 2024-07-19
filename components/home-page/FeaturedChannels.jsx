@@ -11,9 +11,9 @@ const ptSerif = PT_Serif({
 
 const FeaturedChannels = () => {
   return (
-    <div className='px-28 py-10 gap-16 flex flex-col'>
+    <div className='lg:px-28 px-10 md:px-28 py-10 gap-16 flex flex-col'>
         <h2 className={`${ptSerif.className} text-[#d9d9d9] text-3xl text-center`}>Featured Channels</h2>
-        <div className='flex justify-between gap-10'>
+        <div className='flex md:flex-row lg:flex-row flex-col justify-between gap-10'>
             <ChannelCard key={channels[0].link} props={channels[0].offerings[0]}/>
             <ChannelCard key={channels[1].link} props={channels[1].offerings[0]}/>
             <ChannelCard key={channels[2].link} props={channels[2].offerings[0]}/>

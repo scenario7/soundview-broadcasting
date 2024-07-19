@@ -10,7 +10,7 @@ const ptSerif = PT_Serif({
 
 const CustomFooter = () => {
   return (
-    <div className='bg-black flex justify-between px-20 py-10 tracking-tight items-center'>
+    <div className='bg-black flex md:flex-row lg:flex-row flex-col-reverse justify-between lg:px-20 px-10 gap-10 md:px-20 py-10 tracking-tight items-center'>
         <a href='/'>
             <Image src={logo} className='w-44 object-contain'/>
         </a>

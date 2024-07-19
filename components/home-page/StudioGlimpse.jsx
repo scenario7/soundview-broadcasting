@@ -15,9 +15,9 @@ const ptSerif = PT_Serif({
 
 const StudioGlimpse = () => {
   return (
-    <div className='flex flex-col px-28 py-10 gap-16'>
+    <div className='flex flex-col lg:px-28 px-10 md:px-28 py-10 gap-16'>
         <h2 className={`${ptSerif.className} text-[#d9d9d9] text-3xl text-center`}>A Glimpse of our Studios</h2>
-        <div className="flex justify-between items-center">
+        <div className="flex md:flex-row lg:flex-row flex-col gap-10 justify-between items-center">
             {images.map((image) => {
                 return(
                     <img key={image} src={image} className='h-60 w-60 object-cover'/>
