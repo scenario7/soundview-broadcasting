@@ -3,7 +3,7 @@ export const channels = [
         channelID : "indian",
         title : "Indian",
         link : "/channels/indian",
-        imageURL : "http://www.svbllc.com/Resources/Studio%201A.jpg",
+        imageURL : "https://i.imgur.com/7X87xYN.jpg",
         description : "SoundView Broadcasting is the sole North American provider of many of India’s most celebrated and essential entertainment and information channels - Sahara One, Filmy, Sahara Samay, and MH1. DISH Network and Time Warner Cable put these popular TV channels within easy reach of the millions of Indian-Americans now calling the USA home.",
         offerings : [
             {

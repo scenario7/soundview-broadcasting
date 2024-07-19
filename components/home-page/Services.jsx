@@ -10,23 +10,23 @@ const ptSerif = PT_Serif({
 const services = [ 
     {
         title : "Broadcasting",
-        link : "/",
+        link : "/studios",
         imageURL : "https://images.unsplash.com/photo-1590433333434-09df2b2a35a5?q=80&w=2133&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         title : "Production & Post",
-        link : "/",
-        imageURL : "https://images.unsplash.com/photo-1590433333434-09df2b2a35a5?q=80&w=2133&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        link : "/studios",
+        imageURL : "https://images.unsplash.com/photo-1612544409025-e1f6a56c1152?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         title : "Studios",
-        link : "/",
-        imageURL : "https://images.unsplash.com/photo-1590433333434-09df2b2a35a5?q=80&w=2133&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        link : "/studios",
+        imageURL : "https://i.imgur.com/7pel8b5.jpg"
     },
     {
         title : "Additional Services",
-        link : "/",
-        imageURL : "https://images.unsplash.com/photo-1590433333434-09df2b2a35a5?q=80&w=2133&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        link : "/studios",
+        imageURL : "https://i.imgur.com/by02EQ3.jpg"
     }
 ]
 

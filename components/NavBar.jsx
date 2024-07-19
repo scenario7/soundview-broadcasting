@@ -29,9 +29,11 @@ const NavBar = () => {
                 CAREERS
             </button>
             </a>
+            <a href="/contact">
             <button className='bg-white py-1 px-3 text-black rounded-lg font-regular'>
                 CONTACT US
             </button>
+            </a>
         </div>
     </div>
   )

@@ -39,12 +39,14 @@ const ChannelsPage = () => {
         }
         <div className='text-center items-center flex flex-col gap-10 py-20 col-span-2'>
         <h3 className={`${ptSerif.className} text-6xl text-[#d9d9d9]`}>Learn More</h3>
+        <a href="/contact">
         <button className='text-black bg-white px-3 py-2 rounded-full font-medium flex items-center gap-1'>
             Get in Touch
             <svg className='h-4 w-4'  fill="none" strokeWidth={2.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
         </button>
+        </a>
     </div>
     </div>
     
