@@ -10,7 +10,7 @@ const page = () => {
             <div className='text-[#d9d9d9] w-3/4'>
             SoundView Broadcasting offers unparalleled advertising and sponsorship opportunities for corporate, small and medium-sized businesses. By appealing to some of the most lucrative demographics in the country, clients will and their investment rewarded not only with significant returns, but a strong connection to a loyal customer base. Reach four of the most rapidly growing markets - Indian, Pakistani, Bangladeshi, and Sub-Saharan African - on the leading entertainment and news channels. <br/> <br/> <br/>Download the SoundView Broadcasting media kit for detailed advertising information or visit Channels.
             </div>
-            <a href="">
+            <a href="http://www.soundviewbroadcasting.com/Resources/SVBMediaKit2014-Updated-V2-Small.pdf" target='_blank'>
             <button className='bg-[#424242] transition-colors hover:bg-[#646464] text-white px-5 py-2 rounded-full font-medium flex items-center gap-2'>
                       Download Media Kit
                       <svg className='h-4 w-4' fill="none" strokeWidth={2.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
