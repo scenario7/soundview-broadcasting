@@ -57,7 +57,7 @@ const NavBar = () => {
           {buttons.map((button) => {
             if(button.primary){
             return(
-              <a href={button.link}>
+              <a href={button.link} key={button.title}>
                 <button className='bg-[#d9d9d9] uppercase bg-opacity-60 backdrop-blur font-medium w-1/4 text-xs md:text-md md:w-auto md:bg-opacity-30 hover:bg-opacity-50 m-1 md:m-0 transition-all py-1 md:px-3 text-white rounded-lg font-regular'>
                   {button.title}
                 </button>
@@ -65,7 +65,7 @@ const NavBar = () => {
             )
           }else{
             return(
-              <a href={button.link}>
+              <a href={button.link} key={button.title}>
                 <button className='bg-white text-xs md:text-md py-1 w-auto px-3 font-medium uppercase m-2 md:m-0 text-black rounded-lg'>
                   {button.title}
                 </button>
