@@ -4,6 +4,7 @@ import { PT_Serif } from 'next/font/google';
 import HeroTemplate from '@/components/HeroTemplate';
 import CustomFooter from '@/components/CustomFooter';
 import CustomButton from '@/components/CustomButton';
+import CustomCTA from '@/components/CustomCTA';
 
 const ptSerif = PT_Serif({
   weight: ['400', '700'],
@@ -76,8 +77,8 @@ const Page = ({ params }) => {
                     description="Soundview Broadcasting's studios in New York provide state-of-the-art facilities for professional shooting. Equipped with advanced technology and versatile spaces, our studios cater to a wide range of production needs, ensuring high-quality results for all projects."
                 />
                 <div className="flex flex-col items-center gap-20 py-10 justify-between">
-                    <div className="flex md:flex-row flex-col-reverse items-center px-5 md:px-28 gap-10">
-                        <img src={studio.image1URL} alt=""  className='md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-3/4'/>
+                    <div className="flex md:flex-row flex-col-reverse items-center px-10 md:px-28 gap-10">
+                        <img src={studio.image1URL} alt=""  className='md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-auto'/>
                         <div className='flex flex-col items-center text-center gap-5'>
                             <h3 className='text-white'>Studio <span className='uppercase'>{studio.studioID}</span> is equipped for</h3>
                             <div className='flex md:flex-col gap-3'>
@@ -117,12 +118,9 @@ const Page = ({ params }) => {
                         </div>
                     </div>
                     <div className="flex md:flex-row flex-col-reverse items-center px-5 md:px-28 gap-10 justify-between">
-                    <div className='text-center items-center flex flex-col gap-10 py-20 col-span-3'>
-                        <h3 className={`${ptSerif.className} text-4xl md:text-6xl text-[#d9d9d9]`}>Learn More</h3>
-                        <CustomButton link="/contact" title="Get in Touch" primary={true}/>
-                    </div>
+                    <CustomCTA className="h-full"/>
                     {studio.image2URL && (
-                        <img src={studio.image2URL} alt="" className='md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-3/4'/>
+                        <img src={studio.image2URL} alt="" className='md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-auto'/>
                     )}
                     </div>
                 </div>

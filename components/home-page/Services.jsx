@@ -32,8 +32,8 @@ const services = [
 
 const Services = () => {
   return (
-    <div className='flex flex-col lg:px-28 px-10 md:px-28 py-10 gap-16'>
-        <h2 className={`${ptSerif.className} text-[#d9d9d9] text-3xl text-center`}>Services</h2>
+    <div className='flex flex-col lg:px-28 px-10 md:px-28 py-10 md:py-20 gap-16'>
+        <h2 className={`${ptSerif.className} text-[#d9d9d9] text-3xl md:text-5xl text-center`}>Services</h2>
         <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-14">
             {services.map((service) => {
                 return(
