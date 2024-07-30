@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div className="min-h-screen">
       <HeroTemplate title="Get in Touch" />
-      <div className="flex justify-center py-10">
+      <div className="flex justify-center md:py-10">
         <form className="w-full max-w-4xl p-8 rounded-lg shadow-lg">
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">

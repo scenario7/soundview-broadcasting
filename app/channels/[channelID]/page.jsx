@@ -2,6 +2,7 @@ import RegionCard from '@/components/channels/RegionCard';
 import HeroTemplate from '@/components/HeroTemplate'
 import React from 'react'
 import { channels } from '@/app/ChannelData';
+import CustomFooter from '@/components/CustomFooter';
 
 
 const page = ({ params }) => {
@@ -22,6 +23,7 @@ const page = ({ params }) => {
                 )
             })}
         </div>
+        <CustomFooter/>
     </div>
   )
 }
