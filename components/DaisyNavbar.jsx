@@ -48,7 +48,7 @@ const DaisyNavbar = () => {
           <ul className="p-2">
             {channels.map((channel) => {
                 return(
-                    <li><a href={channel.link} key={channel.link}>{channel.title}</a></li>
+                    <li key={channel.link}><a href={channel.link}>{channel.title}</a></li>
                 )
             })}
           </ul>
