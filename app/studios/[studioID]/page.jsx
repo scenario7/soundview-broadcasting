@@ -118,7 +118,10 @@ const Page = ({ params }) => {
                         </div>
                     </div>
                     <div className="flex md:flex-row flex-col-reverse items-center px-5 md:px-28 gap-10 justify-between">
-                    <CustomCTA className="h-full"/>
+                    <div className='p-10 h-full w-full bg-[#1b1b1b] rounded-2xl text-center items-center flex justify-between flex-col gap-5 md:gap-10 col-span-3'>
+        <h3 className={`${ptSerif.className} text-4xl md:text-6xl text-white`}>Learn More</h3>
+        <CustomButton link="/contact" title="Get in Touch" primary={true}/>
+    </div>
                     {studio.image2URL && (
                         <img src={studio.image2URL} alt="" className='md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-auto'/>
                     )}

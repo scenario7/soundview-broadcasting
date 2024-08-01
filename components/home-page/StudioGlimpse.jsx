@@ -21,7 +21,7 @@ const StudioGlimpse = () => {
         <div className="flex md:flex-row lg:flex-row flex-col gap-10 justify-between items-center">
             {images.map((image) => {
                 return(
-                    <img key={image} src={image} className='h-60 w-60 object-cover'/>
+                    <img key={image} src={image} className='h-60 object-cover'/>
                 )
             })}
             <CustomButton link="/studios" title="View all Studios" primary={false}/>

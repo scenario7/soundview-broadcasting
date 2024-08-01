@@ -10,7 +10,7 @@ const page = ({ params }) => {
     const channel = channels.find(channel => channel.channelID === params.channelID);
 
   return (
-    <div className=''>
+    <div className='flex flex-col min-h-screen justify-between'>
         <HeroTemplate title={channel.title} image={channels[Math.floor(Math.random() * (channels.length))].imageURL} description={channel.description}/>
         <div className='grid grid-cols-1 md:grid-cols-4 py-10 px-10 md:px-28 gap-20'>
             {channel.offerings.map((offering) => {
