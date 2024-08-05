@@ -21,6 +21,10 @@ body {
   background: #101010
 }
 
+.navbar.a {
+  color: white;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
