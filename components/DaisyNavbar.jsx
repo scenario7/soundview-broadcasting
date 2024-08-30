@@ -2,9 +2,13 @@ import React from 'react';
 import logo from '@/images/svb-logo.png';
 import Image from 'next/image';
 import CustomButton from './CustomButton';
-import { channels } from '@/app/ChannelData';
+import getStudios from '@/reqs/getStudios';
+import getChannelCountries from '@/reqs/getChannelCountries';
 
-const DaisyNavbar = () => {
+const DaisyNavbar = async () => {
+  const studios = await getStudios();
+  const channels = await getChannelCountries();
+
   return (
     <div className="text-white navbar bg-base-100 md:px-10 md:py-5">
       <div className="navbar-start">
@@ -58,7 +62,7 @@ const DaisyNavbar = () => {
                 {channels.map((channel) => {
                   return (
                     <li key={channel.link}>
-                      <a href={channel.link}>{channel.title}</a>
+                      <a href={'/channels/' + channel.link}>{channel.title}</a>
                     </li>
                   );
                 })}
@@ -71,24 +75,11 @@ const DaisyNavbar = () => {
                 <a href="/studios">Studios</a>
               </summary>
               <ul className="p-2">
-                <li>
-                  <a href="/studios/1a">Studio 1A</a>
-                </li>
-                <li>
-                  <a href="/studios/1b">Studio 1B</a>
-                </li>
-                <li>
-                  <a href="/studios/2a">Studio 2A</a>
-                </li>
-                <li>
-                  <a href="/studios/2b">Studio 2B</a>
-                </li>
-                <li>
-                  <a href="/studios/3a">Studio 3A</a>
-                </li>
-                <li>
-                  <a href="/studios/3b">Studio 3B</a>
-                </li>
+                {studios.map((studio, i) => (
+                  <li key={i}>
+                    <a href={'/studios/' + studio.link}>{studio.title}</a>
+                  </li>
+                ))}
               </ul>
             </details>
           </li>

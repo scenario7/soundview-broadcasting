@@ -4,32 +4,12 @@ import ServiceCard from '@/components/home-page/home-components/ServiceCard';
 import React from 'react';
 import { PT_Serif } from 'next/font/google';
 import CustomButton from '@/components/CustomButton';
-import axios from 'axios';
-import { BASE_API_URL } from '@/constants';
-import parse from 'html-react-parser';
+import getStudios from '@/reqs/getStudios';
 
 const ptSerif = PT_Serif({
   weight: ['400', '700'],
   subsets: ['latin'],
 });
-
-const getStudios = async () => {
-  try {
-    const res = await axios.get(BASE_API_URL + 'studio' + '?per_page=10');
-    const studios = res.data.map((studio) => ({
-      id: studio.acf.id,
-      title: studio.title.rendered,
-      imageURL: studio.acf.banner1,
-      link: studio.slug,
-      description: parse(studio.content.rendered),
-    }));
-
-    return studios;
-  } catch (err) {
-    console.log(err);
-    return 'error';
-  }
-};
 
 const page = async () => {
   const studios = await getStudios();

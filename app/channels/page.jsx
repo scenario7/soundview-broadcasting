@@ -1,45 +1,23 @@
 import React from 'react';
-// import NavBar from '@/components/NavBar'
-// import { channels } from '../ChannelData';
 import { PT_Serif } from 'next/font/google';
 import Marquee from 'react-fast-marquee';
-// import ServiceCard from '@/components/home-page/home-components/ServiceCard';
 import RegionCard from '@/components/channels/RegionCard';
 import CustomFooter from '@/components/CustomFooter';
 import HeroTemplate from '@/components/HeroTemplate';
 import CustomButton from '@/components/CustomButton';
-import { BASE_API_URL } from '@/constants';
-import axios from 'axios';
-import parse from 'html-react-parser';
+import getChannelCountries from '@/reqs/getChannelCountries';
+import getAllChannels from '@/reqs/getAllChannels';
 
 const ptSerif = PT_Serif({
   weight: ['400', '700'],
   subsets: ['latin'],
 });
 
-const getChannelCountries = async () => {
-  try {
-    const res = await axios.get(
-      BASE_API_URL + 'channel-country' + '?per_page=10'
-    );
-    const channelCountries = res.data.map((channelCountry) => ({
-      id: channelCountry.id,
-      title: channelCountry.title.rendered,
-      imageURL: channelCountry.acf.banner,
-      link: channelCountry.slug,
-      channels: channelCountry.acf.channels,
-      description: parse(channelCountry.content.rendered),
-    }));
-
-    return channelCountries;
-  } catch (err) {
-    console.log(err);
-    return 'error';
-  }
-};
-
 const ChannelsPage = async () => {
   const channelCountries = await getChannelCountries();
+  const channels = await getAllChannels();
+
+  console.log(channels);
 
   return (
     <div>
@@ -49,18 +27,15 @@ const ChannelsPage = async () => {
         description="SoundView Broadcasting offers a viewer something they cannot get from any other media source: a connection home. We foster a sense of unity among immigrant groups - extending a link to their traditions and culture through entertainment, news, and community-oriented programming."
       />
       <Marquee className="flex justify-between py-20">
-        {/* {channelCountries && channelCountries.map((region) =>
-          region.offerings ? (
-            region.offerings.map((channel) => (
-              <img
-                key={channel.imageURL}
-                src={channel.imageURL} // Corrected from image.imageURL to channel.imageURL
-                className="h-12 px-10 filter brightness-125"
-                alt={channel.name} // Added alt attribute for accessibility
-              />
-            ))
-          ) : null
-        )} */}
+        {channelCountries &&
+          channels.map((channel) => (
+            <img
+              key={channel.imageURL}
+              src={channel.imageURL} // Corrected from image.imageURL to channel.imageURL
+              className="h-12 px-10 filter brightness-125"
+              alt={channel.name} // Added alt attribute for accessibility
+            />
+          ))}
       </Marquee>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 px-10 md:px-28 py-10 items-stretch">
