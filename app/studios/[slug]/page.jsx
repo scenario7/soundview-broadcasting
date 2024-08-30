@@ -4,76 +4,52 @@ import { PT_Serif } from 'next/font/google';
 import HeroTemplate from '@/components/HeroTemplate';
 import CustomFooter from '@/components/CustomFooter';
 import CustomButton from '@/components/CustomButton';
-import CustomCTA from '@/components/CustomCTA';
+import { BASE_API_URL } from '@/constants';
+import axios from 'axios';
+import parse from 'html-react-parser';
 
 const ptSerif = PT_Serif({
   weight: ['400', '700'],
   subsets: ['latin'],
 });
 
-const studios = [
-  {
-    studioID: '1a',
-    image1URL: 'https://i.imgur.com/5JrzfUf.jpg',
-    image2URL: 'https://i.imgur.com/7X87xYN.jpg',
-    services: ['Sound Production', 'Video Production', 'Live Broadcasting'],
-    title: 'Studio 1A',
-  },
-  {
-    studioID: '1b',
-    image1URL: 'https://i.imgur.com/7pel8b5.jpg',
-    image2URL: 'https://i.imgur.com/TxjLBHC.jpg',
-    services: ['Sound Production', 'Video Production', 'Live Broadcasting'],
-    title: 'Studio 1B',
-  },
-  {
-    studioID: '2a',
-    image1URL: 'https://i.imgur.com/acxrZn2.jpg',
-    image2URL: '',
-    services: ['Sound Production', 'Video Production', 'Live Broadcasting'],
-    title: 'Studio 2A',
-  },
-  {
-    studioID: '2b',
-    image1URL: 'https://i.imgur.com/Btt4Xks.jpg',
-    image2URL: '',
-    services: ['Sound Production', 'Video Production', 'Live Broadcasting'],
-    title: 'Studio 2B',
-  },
-  {
-    studioID: '3a',
-    image1URL: 'https://i.imgur.com/6QIDjNn.jpg',
-    image2URL: '',
-    services: ['Sound Production', 'Video Production', 'Live Broadcasting'],
-    title: 'Studio 3A',
-  },
-  {
-    studioID: '3b',
-    image1URL: 'https://i.imgur.com/by02EQ3.jpg',
-    image2URL: 'https://i.imgur.com/3Csxnyk.jpg',
-    services: ['Sound Production', 'Video Production', 'Live Broadcasting'],
-    title: 'Studio 3B',
-  },
-];
+const getStudio = async (slug) => {
+  try {
+    const res = await axios.get(
+      `${BASE_API_URL}studio?slug=${slug}&per_page=1`
+    );
+    const studio = res.data.map((studio) => ({
+      studioID: studio.acf.id,
+      title: studio.title.rendered,
+      image1URL: studio.acf.banner1,
+      image2URL: studio.acf.banner2,
+      link: studio.slug,
+      services: studio.acf.services,
+      description: parse(studio.content.rendered),
+    }));
 
-const Page = ({ params }) => {
-  const studio = studios.find((studio) => studio.studioID === params.studioID);
+    return studio[0];
+  } catch (err) {
+    console.log(err);
+    return 'error';
+  }
+};
+
+const page = async ({ params }) => {
+  const studio = await getStudio(params.slug);
 
   if (!studio) {
     return <p>Studio not found</p>;
   } else {
     return (
       <div>
-        <HeroTemplate
-          title={studio.title}
-          description="Soundview Broadcasting's studios in New York provide state-of-the-art facilities for professional shooting. Equipped with advanced technology and versatile spaces, our studios cater to a wide range of production needs, ensuring high-quality results for all projects."
-        />
+        <HeroTemplate title={studio.title} description={studio.description} />
         <div className="flex flex-col items-center gap-20 py-10 justify-between">
           <div className="flex md:flex-row flex-col-reverse items-center px-10 md:px-28 gap-10">
             <img
               src={studio.image1URL}
               alt=""
-              className="md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-auto"
+              className="md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-[80%]"
             />
             <div className="flex flex-col items-center text-center gap-5">
               <h3 className="text-white">
@@ -161,7 +137,7 @@ const Page = ({ params }) => {
             </div>
           </div>
           <div className="flex md:flex-row flex-col-reverse items-center px-5 md:px-28 gap-10 justify-between">
-            <div className="p-10 h-full w-full bg-[#1b1b1b] rounded-2xl text-center items-center flex justify-between flex-col gap-5 md:gap-10 col-span-3">
+            <div className="p-10 h-full w-[3/12] bg-[#1b1b1b] rounded-2xl text-center items-center flex justify-between flex-col gap-5 md:gap-10 col-span-3">
               <h3
                 className={`${ptSerif.className} text-4xl md:text-6xl text-white`}
               >
@@ -177,7 +153,7 @@ const Page = ({ params }) => {
               <img
                 src={studio.image2URL}
                 alt=""
-                className="md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-auto"
+                className="md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-9/12"
               />
             )}
           </div>
@@ -188,4 +164,4 @@ const Page = ({ params }) => {
   }
 };
 
-export default Page;
+export default page;

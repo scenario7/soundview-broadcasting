@@ -4,52 +4,36 @@ import ServiceCard from '@/components/home-page/home-components/ServiceCard';
 import React from 'react';
 import { PT_Serif } from 'next/font/google';
 import CustomButton from '@/components/CustomButton';
+import axios from 'axios';
+import { BASE_API_URL } from '@/constants';
+import parse from 'html-react-parser';
 
 const ptSerif = PT_Serif({
   weight: ['400', '700'],
   subsets: ['latin'],
 });
 
-const studios = [
-  {
-    studioID: '1a',
-    imageURL: 'https://i.imgur.com/7X87xYN.jpg',
-    title: 'Studio 1A',
-    link: 'studios/1a',
-  },
-  {
-    studioID: '1b',
-    imageURL: 'https://i.imgur.com/7pel8b5.jpg',
-    title: 'Studio 1B',
-    link: 'studios/1b',
-  },
-  {
-    studioID: '2a',
-    imageURL: 'https://i.imgur.com/acxrZn2.jpg',
-    title: 'Studio 2A',
-    link: 'studios/2a',
-  },
-  {
-    studioID: '2b',
-    imageURL: 'https://i.imgur.com/Btt4Xks.jpg',
-    title: 'Studio 2B',
-    link: 'studios/2b',
-  },
-  {
-    studioID: '3a',
-    imageURL: 'https://i.imgur.com/6QIDjNn.jpg',
-    title: 'Studio 3A',
-    link: 'studios/3a',
-  },
-  {
-    studioID: '3b',
-    imageURL: 'https://i.imgur.com/by02EQ3.jpg',
-    title: 'Studio 3B',
-    link: 'studios/3b',
-  },
-];
+const getStudios = async () => {
+  try {
+    const res = await axios.get(BASE_API_URL + 'studio' + '?per_page=10');
+    const studios = res.data.map((studio) => ({
+      id: studio.acf.id,
+      title: studio.title.rendered,
+      imageURL: studio.acf.banner1,
+      link: studio.slug,
+      description: parse(studio.content.rendered),
+    }));
 
-const page = () => {
+    return studios;
+  } catch (err) {
+    console.log(err);
+    return 'error';
+  }
+};
+
+const page = async () => {
+  const studios = await getStudios();
+
   return (
     <div>
       <HeroTemplate

@@ -13,7 +13,7 @@ const ServiceCard = ({ props }) => {
       <div className="absolute p-4 tracking-tight">
         <h3 className="text-xl font-medium text-white w-3/4">{props.title}</h3>
       </div>
-      <a href={props.link}>
+      <a href={'/studios/' + props.link}>
         <button className="absolute top-0 right-0 bg-white p-3 text-black rounded-bl-lg">
           <svg
             fill="none"
