@@ -1,11 +1,11 @@
 import HeroTemplate from '@/components/HeroTemplate';
 import React from 'react';
 import CustomFooter from '@/components/CustomFooter';
-import { getChannelCountry, getChannels } from '@/reqs/single_channel';
+import { getChannelCountry, getChannel } from '@/reqs/single_channel';
 
 const Country = async ({ params }) => {
   const channelCountry = await getChannelCountry(params.country);
-  const channels = await getChannels(channelCountry.channels);
+  const channels = await getChannel(channelCountry.channels);
 
   return (
     <div className="flex flex-col min-h-screen justify-between">

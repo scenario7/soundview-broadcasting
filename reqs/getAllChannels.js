@@ -1,5 +1,5 @@
 import getChannelCountries from './getChannelCountries';
-import { getChannelCountry, getChannels } from './single_channel';
+import { getChannelCountry, getChannel } from './single_channel';
 
 const getAllChannels = async () => {
   try {
@@ -8,7 +8,7 @@ const getAllChannels = async () => {
 
     for (let country of channelCountries) {
       const get_country = await getChannelCountry(country.link);
-      const channels = await getChannels(get_country.channels);
+      const channels = await getChannel(get_country.channels);
 
       total_channels = total_channels.concat(channels);
     }

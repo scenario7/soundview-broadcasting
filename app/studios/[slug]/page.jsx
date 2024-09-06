@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { PT_Serif } from 'next/font/google';
 import HeroTemplate from '@/components/HeroTemplate';
@@ -7,6 +6,7 @@ import CustomButton from '@/components/CustomButton';
 import { BASE_API_URL } from '@/constants';
 import axios from 'axios';
 import parse from 'html-react-parser';
+import Image from 'next/image';
 
 const ptSerif = PT_Serif({
   weight: ['400', '700'],
@@ -38,26 +38,27 @@ const getStudio = async (slug) => {
 const page = async ({ params }) => {
   const studio = await getStudio(params.slug);
 
-  if (!studio) {
-    return <p>Studio not found</p>;
-  } else {
-    return (
-      <div>
-        <HeroTemplate title={studio.title} description={studio.description} />
-        <div className="flex flex-col items-center gap-20 py-10 justify-between">
-          <div className="flex md:flex-row flex-col-reverse items-center px-10 md:px-28 gap-10">
-            <img
-              src={studio.image1URL}
-              alt=""
-              className="md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-[80%]"
-            />
-            <div className="flex flex-col items-center text-center gap-5">
-              <h3 className="text-white">
-                Studio <span className="uppercase">{studio.studioID}</span> is
-                equipped for
-              </h3>
-              <div className="flex md:flex-col gap-3">
-                {studio.services.map((service) => {
+  if (!studio || studio == undefined) return <p>Studio not found</p>;
+
+  return (
+    <div>
+      <HeroTemplate title={studio.title} description={studio.description} />
+      <div className="flex flex-col items-center gap-20 py-10 justify-between">
+        <div className="flex md:flex-row flex-col-reverse items-center px-10 md:px-28 gap-10">
+          <img
+            src={studio.image1URL}
+            alt="img1"
+            className="md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-[80%]"
+          />
+          <div className="flex flex-col items-center text-center gap-5">
+            <h3 className="text-white">
+              Studio <span className="uppercase">{studio.studioID}</span> is
+              equipped for
+            </h3>
+            <div className="flex md:flex-col gap-3">
+              {studio &&
+                studio.services &&
+                studio.services.map((service) => {
                   switch (service) {
                     case 'Sound Production':
                       return (
@@ -133,35 +134,30 @@ const page = async ({ params }) => {
                       );
                   }
                 })}
-              </div>
             </div>
-          </div>
-          <div className="flex md:flex-row flex-col-reverse items-center px-5 md:px-28 gap-10 justify-between">
-            <div className="p-10 h-full w-[3/12] bg-[#1b1b1b] rounded-2xl text-center items-center flex justify-between flex-col gap-5 md:gap-10 col-span-3">
-              <h3
-                className={`${ptSerif.className} text-4xl md:text-6xl text-white`}
-              >
-                Learn More
-              </h3>
-              <CustomButton
-                link="/contact"
-                title="Get in Touch"
-                primary={true}
-              />
-            </div>
-            {studio.image2URL && (
-              <img
-                src={studio.image2URL}
-                alt=""
-                className="md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-9/12"
-              />
-            )}
           </div>
         </div>
-        <CustomFooter />
+        <div className="flex md:flex-row flex-col-reverse items-center px-5 md:px-28 gap-10 justify-between">
+          <div className="p-10 h-full w-[3/12] bg-[#1b1b1b] rounded-2xl text-center items-center flex justify-between flex-col gap-5 md:gap-10 col-span-3">
+            <h3
+              className={`${ptSerif.className} text-4xl md:text-6xl text-white`}
+            >
+              Learn More
+            </h3>
+            <CustomButton link="/contact" title="Get in Touch" primary={true} />
+          </div>
+          {studio.image2URL && (
+            <img
+              src={studio.image2URL}
+              alt=""
+              className="md:rounded-tl-[100px] rounded-tl-xl rounded-br-xl md:rounded-br-[100px] w-9/12"
+            />
+          )}
+        </div>
       </div>
-    );
-  }
+      <CustomFooter />
+    </div>
+  );
 };
 
 export default page;

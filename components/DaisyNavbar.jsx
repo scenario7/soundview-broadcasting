@@ -9,6 +9,8 @@ const DaisyNavbar = async () => {
   const studios = await getStudios();
   const channels = await getChannelCountries();
 
+  if (studios === 'error' || channels === 'error') return 'Error';
+
   return (
     <div className="text-white navbar bg-base-100 md:px-10 md:py-5">
       <div className="navbar-start">

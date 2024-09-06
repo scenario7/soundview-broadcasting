@@ -25,7 +25,7 @@ const getChannelCountry = async (slug) => {
   }
 };
 
-const getChannels = async (post_channels) => {
+const getChannel = async (post_channels) => {
   const channels = [];
 
   try {
@@ -50,4 +50,4 @@ const getChannels = async (post_channels) => {
   }
 };
 
-export { getChannelCountry, getChannels };
+export { getChannelCountry, getChannel };

@@ -1,13 +1,31 @@
 import React from 'react';
 import { PT_Serif } from 'next/font/google';
 import CustomButton from '../CustomButton';
+import axios from 'axios';
+import { BASE_API_URL } from '@/constants';
+
+const getRegions = async () => {
+  try {
+    const res = await axios.get(
+      `${BASE_API_URL}section?slug=regions&per_page=1`
+    );
+
+    return res.data[0].acf;
+  } catch (err) {
+    console.log(err);
+    return 'error';
+  }
+};
 
 const ptSerif = PT_Serif({
   weight: ['400', '700'],
   subsets: ['latin'],
 });
 
-const WhoWeAre = () => {
+const WhoWeAre = async () => {
+  const data = await getRegions();
+  if (data === 'error') return 'Error';
+
   return (
     <div className="flex flex-col items-center justify-center tracking-tight lg:px-28 px-10 md:px-28 gap-20">
       <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center">
@@ -15,17 +33,9 @@ const WhoWeAre = () => {
           <h2
             className={`${ptSerif.className} text-[#d9d9d9] text-3xl md:text-5xl`}
           >
-            Who we are
+            {data.heading}
           </h2>
-          <p className="text-white text-sm">
-            SoundView Broadcasting is a fully-equipped, independently-owned,
-            60,000 sq. ft. global media broadcasting, production,
-            post-production and marketing company based in New York City. We
-            provide media services for over 26 international television channels
-            from countries including India, Pakistan, Bangladesh, Egypt,
-            Sub-Saharan Africa, and the U.S. to audiences across North America,
-            Europe, and the UK.
-          </p>
+          <p className="text-white text-sm">{data.description}</p>
           <CustomButton
             link="/channels"
             title="Regions we serve"
