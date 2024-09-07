@@ -81,7 +81,11 @@ const NavBar = () => {
         </div>
       </div>
       <div
-        className={`absolute left-0 right-0 bg-opacity-80 p-5 flex flex-col items-center transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+        className={`absolute left-0 right-0 bg-opacity-80 p-5 flex flex-col items-center transition-all duration-300 ease-in-out ${
+          isOpen
+            ? 'max-h-screen opacity-100'
+            : 'max-h-0 opacity-0 overflow-hidden'
+        }`}
       >
         {buttons.map((button) => {
           if (button.primary) {
@@ -106,5 +110,4 @@ const NavBar = () => {
     </div>
   );
 };
-
 export default NavBar;
