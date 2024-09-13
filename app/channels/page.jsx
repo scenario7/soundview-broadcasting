@@ -17,6 +17,8 @@ const ChannelsPage = async () => {
   const channelCountries = await getChannelCountries();
   const channels = await getAllChannels();
 
+  if (channels === 'error' || channelCountries === 'error') return 'Error';
+
   return (
     <div>
       <HeroTemplate

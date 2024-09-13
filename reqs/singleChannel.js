@@ -1,13 +1,13 @@
 import { BASE_API_URL } from '@/constants';
-import axios from 'axios';
 import parse from 'html-react-parser';
+import fetchData from './fetchData';
 
 const getChannelCountry = async (slug) => {
   try {
-    const res = await axios.get(
+    const res = await fetchData(
       BASE_API_URL + `channel-country?slug=${slug}&per_page=1`
     );
-    const data = res.data[0];
+    const data = res[0];
 
     const channelCountry = {
       id: data.id,
@@ -20,7 +20,6 @@ const getChannelCountry = async (slug) => {
 
     return channelCountry;
   } catch (err) {
-    console.log(err);
     return 'error';
   }
 };
@@ -30,10 +29,11 @@ const getChannel = async (post_channels) => {
 
   try {
     for (const post_channel of post_channels) {
-      const res = await axios.get(
+      const res = await fetchData(
         BASE_API_URL + `channel?slug=${post_channel.post_name}&per_page=1`
       );
-      const data = res.data[0];
+
+      const data = res[0];
 
       channels.push({
         title: data.title.rendered,
@@ -45,7 +45,6 @@ const getChannel = async (post_channels) => {
 
     return channels;
   } catch (err) {
-    console.log(err);
     return 'error';
   }
 };

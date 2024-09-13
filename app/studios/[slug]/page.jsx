@@ -4,9 +4,9 @@ import HeroTemplate from '@/components/HeroTemplate';
 import CustomFooter from '@/components/CustomFooter';
 import CustomButton from '@/components/CustomButton';
 import { BASE_API_URL } from '@/constants';
-import axios from 'axios';
 import parse from 'html-react-parser';
 import Image from 'next/image';
+import fetchData from '@/reqs/fetchData';
 
 const ptSerif = PT_Serif({
   weight: ['400', '700'],
@@ -15,10 +15,10 @@ const ptSerif = PT_Serif({
 
 const getStudio = async (slug) => {
   try {
-    const res = await axios.get(
+    const res = await fetchData(
       `${BASE_API_URL}studio?slug=${slug}&per_page=1`
     );
-    const studio = res.data.map((studio) => ({
+    const studio = res.map((studio) => ({
       studioID: studio.acf.id,
       title: studio.title.rendered,
       image1URL: studio.acf.banner1,
@@ -30,7 +30,6 @@ const getStudio = async (slug) => {
 
     return studio[0];
   } catch (err) {
-    console.log(err);
     return 'error';
   }
 };

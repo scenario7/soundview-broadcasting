@@ -1,31 +1,13 @@
 import React from 'react';
 import { PT_Serif } from 'next/font/google';
 import CustomButton from '../CustomButton';
-import axios from 'axios';
-import { BASE_API_URL } from '@/constants';
-
-const getRegions = async () => {
-  try {
-    const res = await axios.get(
-      `${BASE_API_URL}section?slug=regions&per_page=1`
-    );
-
-    return res.data[0].acf;
-  } catch (err) {
-    console.log(err);
-    return 'error';
-  }
-};
 
 const ptSerif = PT_Serif({
   weight: ['400', '700'],
   subsets: ['latin'],
 });
 
-const WhoWeAre = async () => {
-  const data = await getRegions();
-  if (data === 'error') return 'Error';
-
+const WhoWeAre = async ({ regions }) => {
   return (
     <div className="flex flex-col items-center justify-center tracking-tight lg:px-28 px-10 md:px-28 gap-20">
       <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center">
@@ -33,9 +15,9 @@ const WhoWeAre = async () => {
           <h2
             className={`${ptSerif.className} text-[#d9d9d9] text-3xl md:text-5xl`}
           >
-            {data.heading}
+            {regions.heading}
           </h2>
-          <p className="text-white text-sm">{data.description}</p>
+          <p className="text-white text-sm">{regions.description}</p>
           <CustomButton
             link="/channels"
             title="Regions we serve"

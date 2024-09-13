@@ -14,6 +14,8 @@ const ptSerif = PT_Serif({
 const page = async () => {
   const studios = await getStudios();
 
+  if (studios === 'error') return 'Error';
+
   return (
     <div>
       <HeroTemplate

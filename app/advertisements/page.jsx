@@ -2,21 +2,20 @@ import CustomButton from '@/components/CustomButton';
 import CustomFooter from '@/components/CustomFooter';
 import HeroTemplate from '@/components/HeroTemplate';
 import { BASE_API_URL } from '@/constants';
-import axios from 'axios';
+import fetchData from '@/reqs/fetchData';
 import Markdown from 'react-markdown';
 
 const getAdvertisementData = async () => {
   try {
-    const res = await axios.get(
+    const res = await fetchData(
       `${BASE_API_URL}section?slug=advertisements&per_page=1`
     );
 
     return {
-      banner: res.data[0].acf.banner,
-      description: res.data[0].acf.description,
+      banner: res[0].acf.banner,
+      description: res[0].acf.description,
     };
   } catch (err) {
-    console.log(err);
     return 'error';
   }
 };
