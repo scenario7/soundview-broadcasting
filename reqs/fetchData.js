@@ -1,5 +1,5 @@
 async function fetchData(url) {
-  const res = await fetch(url, { next: { revalidate: 10 } }); // Cache for 10 seconds
+  const res = await fetch(url, { cache: 'no-store' });
   if (!res.ok) throw new Error(`Failed to fetch data from ${url}`);
 
   return res.json();
