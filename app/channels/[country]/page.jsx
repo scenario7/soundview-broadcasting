@@ -7,8 +7,6 @@ const Country = async ({ params }) => {
   const channelCountry = await getChannelCountry(params.country);
   const channels = await getChannel(channelCountry.channels);
 
-  // console.log(channels, channelCountry);
-
   if (channels === 'error' || channelCountry === 'error') return 'Error';
 
   return (
