@@ -85,11 +85,15 @@ export default async function Home() {
 
   return (
     <main className="">
-      <HeroSection hero={hero} />
-      <WhoWeAre regions={regions} />
-      <Services services={services} />
-      <FeaturedChannels featuredChannels={featuredChannels} />
-      <StudioGlimpse glimpse={glimpse} studios={studios} />
+      {hero !== 'error' && <HeroSection hero={hero} />}
+      {regions !== 'error' && <WhoWeAre regions={regions} />}
+      {services !== 'error' && <Services services={services} />}
+      {featuredChannels !== 'error' && (
+        <FeaturedChannels featuredChannels={featuredChannels} />
+      )}
+      {glimpse !== 'error' && studios !== 'error' && (
+        <StudioGlimpse glimpse={glimpse} studios={studios} />
+      )}
 
       <CustomFooter />
     </main>
