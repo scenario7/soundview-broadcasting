@@ -3,6 +3,8 @@ import { PT_Serif } from 'next/font/google'
 import NavBar from './NavBar';
 import DaisyNavbar from './DaisyNavbar';
 
+// comment
+
 
 const ptSerif = PT_Serif({
   weight: ['400', '700'],
