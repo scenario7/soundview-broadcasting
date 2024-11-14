@@ -21,8 +21,8 @@ const CustomFooter = () => {
                 <p>36-01 37th Ave,<br/>
                 Long Island City,<br/>
                 NY 11101</p>
-                <a href="">info@svbllc.com</a>
-                <a href="">(718) 937-8400</a>
+                <a href="mailto:info@svbroadcast.com">info@svbroadcast.com</a>
+                <a href="tel:+15164922905">+15164922905</a>
                 </div>
             </div>
             <div className="flex flex-col">
